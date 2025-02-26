@@ -35,9 +35,19 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
             opacity: _isVisible ? 1.0 : 0.0,
             duration: Duration(milliseconds: 1500),
             curve: Curves.elasticInOut,
-            child: Text('Fade Animation App', style: TextStyle(fontSize: 24)),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Owl Image', 
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',),
+              ],
+            ),
           ),
-        )
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: toggleVisibility,
